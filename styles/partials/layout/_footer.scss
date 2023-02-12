@@ -1,0 +1,143 @@
+@use "./../global" as *;
+.wrapper {
+  &--footer {
+    @include full-width($color-primary);
+  }
+}
+
+.footer {
+  background-color: $color-primary;
+  color: $color-secondary;
+  padding: 1rem 1rem 0 1rem;
+  @include tablet {
+    @include flex(row, flex-start, space-between);
+    padding: 1rem 2rem;
+  }
+  @include desktop {
+    padding: 1rem 8rem;
+    @include wrap($max-width, $margin-center);
+  }
+  * {
+    padding: 0.4rem 0;
+  }
+  &__content {
+    padding: 0;
+    @include tablet {
+      width: 100%;
+      @include flex(column, flex-start, flex-start);
+    }
+  }
+  &__social {
+    padding: 0;
+    display: flex;
+    width: 100%;
+    @include flex-direction(column);
+    @include tablet {
+      @include flex(row, center, space-between);
+    }
+  }
+  &__medias {
+    @include tablet {
+      @include flex(row, center, space-between);
+    }
+  }
+  &__title {
+    padding: 0;
+    font-size: 1.6rem;
+    @extend %title;
+    @include tablet {
+      font-size: 2.2rem;
+      margin-right: 1.6rem;
+    }
+  }
+  &__links {
+    padding: 0;
+    @include flex-direction(row);
+  }
+  &__link {
+    margin: 0 0.4rem 0 0;
+    &--mobile {
+      @include tablet {
+        display: none;
+      }
+      @include desktop {
+        display: none;
+      }
+    }
+    &--desktop {
+      @include desktop {
+        display: flex;
+      }
+    }
+  }
+  &__icon {
+    margin: 0 1.2rem 0 0;
+    height: 1.5rem;
+    padding: 0;
+    border-radius: 0.2rem;
+    &:hover {
+      background-color: $color-tertiary;
+    }
+  }
+  &__contacts {
+    font-size: 0.8rem;
+    @include tablet {
+      @include flex(row, center, flex-start);
+      width: 100%;
+      padding: 0;
+    }
+  }
+  &__info {
+    @include tablet {
+      padding-right: 2rem;
+    }
+  }
+  &__address {
+    padding: 0;
+  }
+  &__subtitle,
+  &__position {
+    padding: 0;
+    @extend %font-demi;
+    @include tablet {
+      font-size: 0.9rem;
+    }
+  }
+  &__email {
+    color: $color-secondary;
+    border-radius: 0.3rem;
+    &:hover {
+      background-color: $color-tertiary;
+    }
+  }
+  &__copy {
+    font-size: 0.7rem;
+  }
+
+  &__logo {
+    &--mobile {
+      margin: 2rem 0 0 0;
+      @include tablet {
+        margin: 0;
+      }
+    }
+    &--tablet {
+      display: none;
+      padding: 0.5rem;
+      @include tablet {
+        display: flex;
+        padding: 0.5rem 0 0.5rem 1.5rem;
+      }
+      @include desktop {
+        display: none;
+      }
+    }
+    &--desktop {
+      display: none;
+      @include desktop {
+        display: flex;
+        padding: 1.5rem 0.9rem 0 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,207 @@
+@use "./partials/main" as *;
+
+// wrappers for displays
+.wrapper {
+  &--hero {
+    @include full-width($linear-gradient--background);
+    background-image: $linear-gradient--overlay,
+      url("../assets/images/hero-bio.jpg");
+    @include cover-background;
+  }
+  &--about {
+    @include full-width($color-secondary);
+  }
+  &--gallery {
+    @include full-width($color-secondary-dark);
+  }
+  &--comments {
+    @include full-width($color-secondary);
+  }
+}
+
+// hero
+.hero {
+  display: flex;
+  width: 100%;
+  min-height: 12rem;
+  @extend %wrapper-mobile;
+  @include tablet {
+    min-height: 28rem;
+    padding: 2rem;
+  }
+  @include desktop {
+    min-height: 45rem;
+    object-fit: cover;
+    object-position: center;
+    @include wrap($max-width, $margin-center);
+  }
+  &__title {
+    align-self: center;
+    color: $color-secondary;
+    @include desktop {
+      margin: 5rem;
+    }
+  }
+  &__text {
+    @extend %font-demi;
+    @include tablet {
+      font-size: 3.75rem;
+    }
+  }
+}
+
+// about
+.about {
+  @include flex-direction(column);
+  @extend %wrapper-mobile;
+  @include tablet {
+    padding: 2rem;
+  }
+  @include wrap($max-width, $margin-center);
+  &__content {
+    @include tablet {
+      padding: 0 3.5rem;
+    }
+    @include desktop {
+      margin: 0 7rem;
+    }
+  }
+  &__title {
+    @extend %content-mobile;
+    @extend %title;
+    padding: 0;
+    @include tablet {
+      font-size: 2rem;
+    }
+    @include desktop {
+      margin: 0.5rem 5rem 0 5rem;
+      font-size: 2.5rem;
+    }
+  }
+  &__img {
+    padding: 0.3rem 0;
+    @include box(100%, 10.6rem);
+    object-fit: cover;
+    object-position: bottom;
+    @include tablet {
+      height: 18.75rem;
+    }
+    @include desktop {
+      height: 28.125rem;
+      padding-right: 1rem;
+    }
+  }
+  &__quote {
+    @extend %content-mobile;
+    @include tablet {
+      margin: 1rem 0 0 0;
+    }
+    @include desktop {
+      width: 76%;
+    }
+  }
+  &__quotation {
+    font-size: 0.9rem;
+    text-align: left;
+    @extend %font-demi;
+    @include tablet {
+      font-size: 1.4rem;
+    }
+    @include desktop {
+      font-size: 1.4rem;
+      text-align: left;
+    }
+  }
+  &__autor {
+    font-size: 0.9rem;
+    @extend %font-demi;
+    @extend %content-mobile;
+    @include tablet {
+      padding: 0.7rem 0;
+      font-size: 1rem;
+    }
+  }
+  &__bio {
+    @extend %content-mobile;
+  }
+  &__subtitle {
+    font-size: 1rem;
+    @extend %content-mobile;
+    @extend %font-demi;
+    @include tablet {
+      font-size: 1.3rem;
+    }
+    @include desktop {
+      font-size: 1.5rem;
+    }
+  }
+  &__text {
+    @include tablet {
+      @include flex-direction(row);
+    }
+  }
+  &__paragraph {
+    font-size: 0.8rem;
+    @extend %content-mobile;
+    @include tablet {
+      padding: 1rem 2rem 0 0;
+    }
+    @include desktop {
+      width: 100%;
+      margin: 0;
+      font-size: 0.9rem;
+      padding-right: 1rem;
+      text-align: left;
+    }
+  }
+}
+
+// gallery
+.gallery {
+  background-color: $color-secondary-dark;
+  padding: 0.5rem 1rem;
+  @include tablet {
+    padding: 1.5rem 1rem;
+  }
+  @include desktop {
+    padding: 3rem 7rem 2rem 7rem;
+    @include wrap($max-width, $margin-center);
+  }
+  &__title {
+    padding: 1rem 0 0 0;
+    @extend %title;
+    @include tablet {
+      padding: 1.5rem 0 0.5rem 1rem;
+      font-size: 2rem;
+    }
+    @include desktop {
+      font-size: 2.5rem;
+      padding: 1.5rem 0 0.5rem 0.7rem;
+    }
+  }
+  &__images-list {
+    @include tablet {
+      @include flex(row, center, center);
+      flex-wrap: wrap;
+    }
+    @include desktop {
+      padding: 0;
+    }
+  }
+  &__img {
+    padding: 0.5rem 0;
+    filter: grayscale(100%);
+    &:hover {
+      filter: grayscale(0%);
+      transition: all ease-in-out 0.2s;
+    }
+    @include tablet {
+      width: 15rem;
+      padding: 0.5rem;
+    }
+    @include desktop {
+      width: 21.5rem;
+      padding: 0.7rem 1.1rem 0.7rem 0;
+    }
+  }
+}
