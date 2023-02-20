@@ -27,18 +27,17 @@ let commentsArr = [
 ];
 
 const commentsSection = document.querySelector(".comments");
-const newSection = createElement("section", "display-comments"); // add section
-commentsSection.appendChild(newSection); // append section to main
+const newSection = createElement("section", "display-comments");
+commentsSection.appendChild(newSection);
 
-const newList = createElement("ul", "display-comments__list"); // add list
-newList.setAttribute("id", "comments-list"); // add id to the list
-newSection.appendChild(newList); // append list to section
+const newList = createElement("ul", "display-comments__list");
+newList.setAttribute("id", "comments-list");
+newSection.appendChild(newList);
 
 const commentsList = document.getElementById("comments-list");
 
 // display comments
 function displayComment(comment) {
-  // // create div
   const commentDiv = createElement("div", "display-comments__card");
   const commentCardDiv = createElement("div", "display-comments__content");
   const nameAndDataDiv = createElement(
@@ -47,7 +46,6 @@ function displayComment(comment) {
   );
   const textDiv = createElement("div");
 
-  // create p and append them to a div
   nameAndDataDiv.appendChild(
     createElement("p", "display-comments__name", comment.name)
   );
@@ -58,15 +56,12 @@ function displayComment(comment) {
     createElement("p", "display-comments__text", comment.commentText)
   );
 
-  // append name, data, and comment text to a Card div
   commentCardDiv.appendChild(nameAndDataDiv);
   commentCardDiv.appendChild(textDiv);
 
-  // append card div to a outer div
   commentDiv.appendChild(createElement("div", "comments__img--no-pic"));
   commentDiv.appendChild(commentCardDiv);
 
-  // append outer div to the main div
   commentsList.appendChild(commentDiv);
 }
 
@@ -80,7 +75,7 @@ function cleanAndAddComments() {
 
 cleanAndAddComments();
 
-// generate today's date
+// generate date
 let today = new Date();
 let dd = String(today.getDate()).padStart(2, "0");
 let mm = String(today.getMonth() + 1).padStart(2, "0");
@@ -117,7 +112,7 @@ form.addEventListener("submit", (event) => {
   }
 });
 
-// clean validation when input has a value
+// clean validation
 function cleanValidation(event) {
   if (event.target.value) {
     event.target.classList.remove("comments__required");
