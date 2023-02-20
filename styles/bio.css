@@ -1,38 +1,26 @@
-.hero,
-.about {
+.hero, .about {
   padding: 1rem;
 }
 
-.about__title,
-.about__quote,
-.about__autor,
-.about__bio,
-.about__subtitle,
-.about__paragraph {
+.about__title, .about__quote, .about__autor, .about__bio, .about__subtitle, .about__paragraph {
   padding: 0.5rem 0;
 }
 
 @font-face {
   font-family: "Avenir Next LT Pro";
-  src: url("./../assets/font/AvenirNextLTPro-Regular.otf") format("otf"),
-    url("AvenirNextLTPro-Regular.woff2") format("woff2"),
-    url("AvenirNextLTPro-Regular.woff") format("woff");
+  src: url("./../assets/font/AvenirNextLTPro-Regular.otf") format("otf"), url("AvenirNextLTPro-Regular.woff2") format("woff2"), url("AvenirNextLTPro-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "Avenir Next LT Pro";
-  src: url("./../assets/font/AvenirNextLTPro-Demi.otf") format("otf"),
-    url("AvenirNextLTPro-Demi.woff2") format("woff2"),
-    url("AvenirNextLTPro-Demi.woff") format("woff");
+  src: url("./../assets/font/AvenirNextLTPro-Demi.otf") format("otf"), url("AvenirNextLTPro-Demi.woff2") format("woff2"), url("AvenirNextLTPro-Demi.woff") format("woff");
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
   font-family: "Avenir Next LT Pro";
-  src: url("./../assets/font/AvenirNextLTPro-Bold.otf") format("otf"),
-    url("AvenirNextLTPro-Bold.woff2") format("woff2"),
-    url("AvenirNextLTPro-Bold.woff") format("woff");
+  src: url("./../assets/font/AvenirNextLTPro-Bold.otf") format("otf"), url("AvenirNextLTPro-Bold.woff2") format("woff2"), url("AvenirNextLTPro-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
 }
@@ -40,38 +28,15 @@ html {
   font-family: "Avenir Next", sans-serif;
 }
 
-.display-comments__text,
 .navbar__link--desactive {
   font-weight: 400;
 }
 
-.hero__text,
-.about__quotation,
-.about__autor,
-.about__subtitle,
-.comments__label,
-.comments__button,
-.display-comments__name,
-.navbar__item--active,
-.footer__subtitle,
-.footer__position,
-.about__title,
-.gallery__title,
-.comments__title,
-.footer__title {
+.hero__text, .about__quotation, .about__autor, .about__subtitle, .navbar__item--active, .footer__subtitle, .footer__position, .about__title, .gallery__title, .footer__title {
   font-weight: 600;
 }
 
-.comments__label,
-.display-comments__name-and-data,
-.display-comments__text {
-  font-size: 0.9rem;
-}
-
-.about__title,
-.gallery__title,
-.comments__title,
-.footer__title {
+.about__title, .gallery__title, .footer__title {
   font-size: 1.5rem;
 }
 
@@ -96,9 +61,9 @@ dd {
   margin: 0;
 }
 
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role="list"],
-ol[role="list"] {
+/* Remove list styles */
+ul[role=list],
+ol[role=list] {
   list-style: none;
 }
 
@@ -112,25 +77,24 @@ a:visited {
   text-decoration: none;
 }
 
-/* Set core root defaults */
+/* Core root defaults */
 html:focus-within {
   scroll-behavior: smooth;
 }
 
-/* Set core body defaults */
+/* Core body defaults */
 body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
 }
 
-/* A elements that don't have a class get default styles */
+/* Default styles */
 a:not([class]) {
   -webkit-text-decoration-skip: ink;
-  text-decoration-skip-ink: auto;
+          text-decoration-skip-ink: auto;
 }
 
-/* Make images easier to work with */
 img,
 picture {
   max-width: 100%;
@@ -272,13 +236,11 @@ select {
 .footer__address {
   padding: 0;
 }
-.footer__subtitle,
-.footer__position {
+.footer__subtitle, .footer__position {
   padding: 0;
 }
 @media screen and (min-width: 768px) {
-  .footer__subtitle,
-  .footer__position {
+  .footer__subtitle, .footer__position {
     font-size: 0.9rem;
   }
 }
@@ -422,8 +384,7 @@ select {
   border-bottom-style: solid;
   border-bottom-color: #ffffff;
 }
-.navbar__item:hover,
-.navbar__item:focus {
+.navbar__item:hover, .navbar__item:focus {
   border-bottom-width: 0.3125rem;
   border-bottom-style: solid;
   border-bottom-color: #ffffff;
@@ -434,16 +395,14 @@ select {
 .navbar__link--desactive {
   color: #dedede;
 }
-.navbar__link--desactive:hover,
-.navbar__link--desactive:focus {
+.navbar__link--desactive:hover, .navbar__link--desactive:focus {
   color: #ffffff;
 }
 
 .wrapper--hero {
   width: 100%;
-  background: linear-gradient(#a52e7b, #501050);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../assets/images/hero-bio.jpg");
+  background: linear-gradient(rgb(165, 46, 123), rgb(80, 16, 80));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/images/hero-bio.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -476,9 +435,9 @@ select {
   .hero {
     min-height: 45rem;
     -o-object-fit: cover;
-    object-fit: cover;
+       object-fit: cover;
     -o-object-position: center;
-    object-position: center;
+       object-position: center;
     max-width: 1280px;
     margin: 0 auto;
   }
@@ -538,9 +497,9 @@ select {
   width: 100%;
   height: 10.6rem;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
   -o-object-position: bottom;
-  object-position: bottom;
+     object-position: bottom;
 }
 @media screen and (min-width: 768px) {
   .about__img {
@@ -688,4 +647,4 @@ select {
     width: 21.5rem;
     padding: 0.7rem 1.1rem 0.7rem 0;
   }
-}
+}/*# sourceMappingURL=bio.css.map */
