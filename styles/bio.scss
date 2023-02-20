@@ -205,3 +205,154 @@
     }
   }
 }
+
+// comments section
+.comments {
+  @include flex(column, flex-start, center);
+  padding: 0 1rem;
+  @include wrap($max-width, $margin-center);
+  @include tablet {
+    padding: 1.5rem 2rem;
+  }
+  @include desktop {
+    padding: 0 7.5rem;
+  }
+  &__title {
+    @extend %title;
+    padding: 1rem 0;
+    @include tablet {
+      font-size: 2rem;
+    }
+    @include desktop {
+      font-size: 2.3rem;
+    }
+  }
+  &__add-comment {
+    @include flex-direction(row);
+    width: 100%;
+    @include tablet {
+      justify-content: center;
+      padding: 0 3rem;
+    }
+    @include desktop {
+      width: 60%;
+      align-self: center;
+    }
+  }
+  &__img {
+    background-image: url("../assets/images/Mohan-muruge.jpg");
+    @include cover-background;
+    @include image-profile(3rem, 2.5rem);
+    margin: 2rem 0;
+    @include tablet {
+      @include image-profile(3rem, 2.8rem);
+    }
+    &--no-pic {
+      @include image-profile(3rem, 2.5rem);
+      display: flex;
+      @include tablet {
+        @include image-profile(3rem, 2.8rem);
+      }
+    }
+  }
+  &__form {
+    display: flex;
+    width: 100%;
+    @include flex(column, left, space-between);
+  }
+  &__list {
+    margin: 0;
+    padding: 0 0 0 1rem;
+  }
+  &__label {
+    text-transform: uppercase;
+    color: $color-tertiary-darker;
+    @extend %font-size-small;
+    @extend %font-demi;
+  }
+  &__name,
+  &__text {
+    width: 100%;
+    margin: 0.3rem 0 0.9rem 0;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    @include border-all(0.0625rem, solid, $color-tertiary-dark);
+    background-color: $color-secondary-dark;
+    &::placeholder {
+      color: $color-primary-darker;
+    }
+    &:active {
+      @include border-all(0.0625rem, solid, $color-primary-darker);
+    }
+    &:focus {
+      outline: $color-primary-darker;
+      @include border-all(0.0625rem, solid, $color-primary-darker);
+    }
+  }
+  &__required {
+    border-radius: 0.25rem;
+    @include border-all(0.0625rem, solid, $color-validation);
+  }
+  &__btn {
+    @include flex-default(center, center);
+    @include tablet {
+      @include flex-default(center, right);
+    }
+  }
+  &__button {
+    @include button(100%, 0.5rem 2rem);
+    &:hover {
+      background-color: $color-primary-darker;
+      cursor: pointer;
+    }
+    @include tablet {
+      width: 10rem;
+    }
+  }
+}
+
+.display-comments {
+  margin: 0;
+  line-height: 1.3em;
+  @include tablet {
+    justify-content: center;
+    padding: 0 3rem;
+  }
+  @include desktop {
+    align-self: center;
+    width: 60%;
+    margin: 1rem;
+  }
+  &__list {
+    padding: 0;
+  }
+  &__card {
+    @include flex(row, left, space-between);
+    @include border-position(bottom, 0.0625rem, solid, $color-tertiary-darker);
+    padding: 1rem 0;
+    width: 100%;
+    &:first-child {
+      @include border-position(top, 0.0625rem, solid, $color-tertiary-darker);
+    }
+  }
+  &__content {
+    width: 100%;
+    padding: 0 0 0 1rem;
+  }
+  &__name-and-data {
+    @include flex-default(center, space-between);
+    @extend %font-size-small;
+    padding: 0 0 0.5rem 0;
+  }
+  &__name {
+    @extend %font-demi;
+  }
+  &__date {
+    color: $color-tertiary-darker;
+  }
+  &__text {
+    @extend %font-regular;
+    @extend %font-size-small;
+    text-align: left;
+  }
+}
