@@ -1,4 +1,4 @@
-// colours base;
+// colors base;
 $color-primary: #323232;
 $color-secondary: #ffffff;
 $color-tertiary: #e1e1e1;
@@ -11,7 +11,7 @@ $linear-gradient--overlay: linear-gradient(
   rgba(0, 0, 0, 0.5),
   rgba(0, 0, 0, 0.5)
 );
-// colours dark;
+// colors dark;
 $color-primary-dark: darken($color-primary, 1%);
 $color-secondary-dark: darken($color-secondary, 1%);
 $color-tertiary-dark: darken($color-tertiary, 1%);
